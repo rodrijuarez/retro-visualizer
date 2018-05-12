@@ -1,13 +1,9 @@
-//const formResolution = 80;
-
 const calculatePositionX = (i, radius, angle) => cos(angle * i) * radius;
 
 const calculatePositionY = (i, radius, angle) => sin(angle * i) * radius;
 
 const calcAngle = formResolution => radians(360 / formResolution);
 
-//(defn produce-tiles [angle radius form-resolution]
-//(for [i (range form-resolution)] [(calc-pos-x i radius angle) (calc-pos-y i radius angle)]))
 const produceTiles = (angle, radius, formResolution) => {
   return Array.from(new Array(formResolution), (a, i) => {
     const x = calculatePositionX(i, radius, angle),
@@ -31,21 +27,11 @@ const retroColor = () => {
   }
 };
 
-//;x and y axis calculation
-//(defn c-x-location [location step-size]
-//(+ (first location) (q/random (- step-size) step-size)))
-
-//(defn c-y-location [location step-size]
-//(+ (second location) (q/random (- step-size) step-size)))
-//
 const calculateXLocation = (location, stepSize) =>
   location[0] + random(-stepSize, stepSize);
 const calculateYLocation = (location, stepSize) =>
   location[1] + random(-stepSize, stepSize);
 
-//(defn c-location [step-size locations]
-//(for [location locations] [(c-x-location location step-size) (c-y-location location step-size)]))
-//
 const calculateLocations = (stepSize, locations) => {
   return locations.map(location => [
     calculateXLocation(location, stepSize),
