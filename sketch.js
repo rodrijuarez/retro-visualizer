@@ -72,7 +72,7 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(2550, 1440);
+  createCanvas(2550 / 2, 1440 / 2);
   frameRate(30);
   colorMode(RGB);
   smooth();
